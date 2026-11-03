@@ -12,7 +12,7 @@
   const GRAVITY = 1400;       // higher = falls faster
   const FLAP = -400;          // jump strength
   const SPEED = 160;          // bone speed
-  const GAP = 230;            // space between top and bottom bone
+  const GAP = 220;            // space between top and bottom bone
   const SPACING = 220;        // distance between bone pairs
   // ===========================
 
