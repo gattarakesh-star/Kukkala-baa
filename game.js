@@ -8,7 +8,7 @@
   const GAMEOVER2_SRC = 'assets/gameover2.mp3';     // NEW: second game over sound
   const GAMEOVER2_DELAY_MS = 800;                   // wait before the 2nd sound (0 = together)
   const VIEW_H = 540;         // smaller = more zoomed in, bigger = more zoomed out
-  const PLAYER_HEIGHT = 208;   // drawn size of your pic
+  const PLAYER_HEIGHT = 68;   // drawn size of your pic
   const GRAVITY = 1400;       // higher = falls faster
   const FLAP = -400;          // jump strength
   const SPEED = 160;          // bone speed
