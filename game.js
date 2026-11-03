@@ -26,16 +26,27 @@
 
   // ---------- full screen sizing ----------
   function resize() {
-    const vw = window.innerWidth, vh = window.innerHeight;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    W = Math.max(300, Math.min(600, Math.round(H * vw / vh)));
-    const s = Math.min(vw / W, vh / H);
-    canvas.style.width = W * s + 'px';
-    canvas.style.height = H * s + 'px';
-    canvas.width = Math.round(W * s * dpr);
-    canvas.height = Math.round(H * s * dpr);
-    ctx.setTransform(s * dpr, 0, 0, s * dpr, 0, 0);
-    player.x = Math.round(W * 0.27);
+const vw = window.innerWidth;
+const vh = window.innerHeight;
+const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+// Match the game canvas to the screen aspect ratio
+W = Math.round(H * vw / vh);
+
+// Fill the entire available screen
+canvas.style.width = vw + 'px';
+canvas.style.height = vh + 'px';
+
+canvas.width = Math.round(vw * dpr);
+canvas.height = Math.round(vh * dpr);
+
+// Scale the game drawing coordinates
+const scaleX = canvas.width / W;
+const scaleY = canvas.height / H;
+
+ctx.setTransform(scaleX, 0, 0, scaleY, 0, 0);
+
+player.x = Math.round(W * 0.27);
   }
   window.addEventListener('resize', resize);
   window.addEventListener('orientationchange', resize);
